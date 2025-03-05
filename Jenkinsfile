@@ -22,6 +22,7 @@ pipeline {
                 ]) {
                     script {
                         sh '''
+                            printenv
                             export TRIVY_RUN_AS_PLUGIN=aqua
                             export AQUA_URL=https://api.dev.supply-chain.cloud.aquasec.com
                             export CSPM_URL=https://stage.api.cloudsploit.com
