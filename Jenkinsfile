@@ -22,6 +22,7 @@ pipeline {
                     ]) {
                         script {
                             sh '''
+                            printenv
                             export AQUA_KEY=$AQUA_KEY
                             export AQUA_SECRET=$AQUA_SECRET
                             export TRIVY_RUN_AS_PLUGIN=aqua
