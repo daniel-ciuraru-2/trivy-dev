@@ -27,12 +27,11 @@ pipeline {
                             export TRIVY_RUN_AS_PLUGIN=aqua
                             export CSPM_URL=https://stage.api.cloudsploit.com
                             export AQUA_URL=https://api.dev.supply-chain.cloud.aquasec.com
-                            export SKIP_CODE_METADATA=true
                             docker run --rm \
                                 -v $(pwd):/repo \
                                 -e AQUA_KEY=$AQUA_KEY \
                                 -e AQUA_SECRET=$AQUA_SECRET \
-                                -e TRIVY_RUN_AS_PLUGIN=true \
+                                -e TRIVY_RUN_AS_PLUGIN=aqua \
                                 -e CSPM_URL=$CSPM_URL \
                                 -e AQUA_URL=$AQUA_URL \
                                 ${TRIVY_IMAGE} trivy fs --debug --scanners vuln --list-all-pkgs /repo
