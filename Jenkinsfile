@@ -10,6 +10,7 @@ pipeline {
             agent {
                 docker {
                     image 'daniel86c/pubtest:trivylocal'
+                    alwaysPull true
                 }
             }
             steps {
