@@ -22,6 +22,11 @@ pipeline {
                     ]) {
                         script {
                             sh '''
+                            export AQUA_KEY=$AQUA_KEY
+                            export AQUA_SECRET=$AQUA_SECRET
+                            export TRIVY_RUN_AS_PLUGIN=aqua
+                            export CSPM_URL=https://stage.api.cloudsploit.com
+                            export AQUA_URL=https://api.dev.supply-chain.cloud.aquasec.com
                             docker run --rm \
                                 -v $(pwd):/repo \
                                 -e AQUA_KEY=$AQUA_KEY \
