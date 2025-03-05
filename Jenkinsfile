@@ -28,7 +28,7 @@ pipeline {
                             export CSPM_URL=https://stage.api.cloudsploit.com
                             export AQUA_URL=https://api.dev.supply-chain.cloud.aquasec.com
                             export SKIP_CODE_METADATA=true
-                            docker run --rm -v $(pwd):/repo ${TRIVY_IMAGE} trivy fs --debug --scanners vuln --list-all-pkgs --use-trivy-server ./repo
+                            docker run --rm -v $(pwd):/repo ${TRIVY_IMAGE} trivy fs --debug --scanners vuln --list-all-pkgs ./repo
                             '''
                         }
                     }
