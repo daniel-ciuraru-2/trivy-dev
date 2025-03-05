@@ -9,7 +9,7 @@ pipeline {
         stage('Aqua scanner') {
             agent {
                 docker {
-                    image 'daniel86c/pubtest:trivylocal'
+                    image 'aquasec/aqua-scanner:dev'
                     alwaysPull true
                 }
             }
