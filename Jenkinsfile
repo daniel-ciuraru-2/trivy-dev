@@ -9,7 +9,7 @@ pipeline {
         stage('Aqua scanner') {
             agent {
                 docker {
-                    image 'aquasec/aqua-scanner:dev'
+                    image 'aquasec/aqua-scanner:cmacgm'
                     alwaysPull true
                 }
             }
